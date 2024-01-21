@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard-Admin</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid main-container p-0">
+        <header class="dashboard-header shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="dashboard-nav-1">
+                <div class="dashboard-logo">
+                    <button type="button" id="dashboard-menubar" class="btn btn-mode"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg></button>
+                    <img src="images/plateform-image.svg" alt="" srcset="">
+                </div>
+                <div class="dashboard-content">
+                    <div class="dashboard-profile-content">
+                        <span>Welcome</span>
+                        <span class="dashboard-profile-content-major">Admin admin2</span>
+                    </div>
+
+                    <div class="dashboard-logout">
+                        <button type="button" id="plateform-dark" class="btn btn-mode dashboard-logout-icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                            </svg></button>
+                        <button type="button" class="btn-mode">Logout</button>
+                    </div>
+                    <div class="dark-mode-btn-dashboard">
+                        <button type="button" id="plateform-dark" class="btn btn-mode"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-moon" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+                            </svg></button>
+
+                        <button type="button" id="plateform-light" class="btn btn-mode"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-brightness-high" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                            </svg></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="dashboard-nav-2">
+                <ul class="nav nav-underline">
+                    <li class="nav-item">
+                        <div class="dashboard-profile-content-nav-2">
+                            <span>Welcome</span>
+                            <span class="dashboard-profile-content-nav-2-major">Admin admin2</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Provider Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Profile</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Providers</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Access</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Records</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div class="below-nav-content m-3">
+            <div class="container-fluid">
+                <!-- card -->
+                <div class="row" id="row-card">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card active-state-base">
+                        <div class="dashboard-card dashboard-card-1">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-moon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+                                </svg>
+                                <span>NEW</span>
+                            </div>
+                            <span>1452</span>
+
+                        </div>
+                        <div class="active-state active-state-1"></div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card">
+                        <div class="dashboard-card dashboard-card-2">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                                <span>PENDING</span>
+                            </div>
+                            <span>266</span>
+
+                        </div>
+                        <div class="active-state active-state-2"></div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card">
+                        <div class="dashboard-card dashboard-card-3">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                                </svg>
+                                <span>ACTIVE</span>
+                            </div>
+                            <span>26</span>
+
+                        </div>
+                        <div class="active-state active-state-3"></div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card">
+                        <div class="dashboard-card dashboard-card-4">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-clock-history" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z" />
+                                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
+                                    <path
+                                        d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <span>CONCLUDE</span>
+                            </div>
+                            <span>1078</span>
+
+                        </div>
+                        <div class="active-state active-state-4"></div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card">
+                        <div class="dashboard-card dashboard-card-5">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-fill-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m-.646-4.854.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 0 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 .708-.708" />
+                                </svg>
+                                <span>TO CLOSE</span>
+                            </div>
+                            <span>519</span>
+
+                        </div>
+                        <div class="active-state active-state-5"></div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4 start-card">
+                        <div class="dashboard-card dashboard-card-6">
+                            <div class="dashboard-image-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-coin" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z" />
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                </svg>
+                                <span>UNPAID</span>
+                            </div>
+                            <span>16</span>
+
+                        </div>
+                        <div class="active-state active-state-6"></div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+            <div class="container-fluid">
+                <div id="admin-dashboard-new-state">
+                    <div class="row">
+                        <div class="patient-button-container my-3">
+                            <div class="patients-heading">
+                                <h4>Patients</h4>
+                                <div class="patients-sub-heading">(New)</div>
+                            </div>
+                            <div class="patient-dashboard-button">
+                                <button type="button" class="btn btn-info">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor"
+                                        class="bi bi-send" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                                    </svg>
+                                    <span>Send Link</span>
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                    </svg>
+                                    <span>Create Request</span>
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <svg fill="currentColor" height="18" width="16" version="1.1" id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 489 489" xml:space="preserve">
+                                        <g>
+                                            <path d="M59.7,255.005c-44,53.5-59.7,116.5-59.7,157.6c0,5.6,3.7,10.4,9.1,11.8c1,0.3,2.1,0.4,3.1,0.4c4.3,0,8.4-2.3,10.7-6.2
+                                            c62.3-109.8,179.8-115.6,256.5-115.9v79.5c0,4.7,2.7,9.1,7,11.1s9.4,1.4,13-1.6l185.2-153.2c2.8-2.3,4.4-5.8,4.4-9.4
+                                            c0-3.7-1.6-7.1-4.5-9.4l-185-152.7c-3.7-3-8.7-3.7-13-1.6c-4.3,2-7,6.3-7,11.1v79.8C161.7,160.605,95.1,211.905,59.7,255.005z
+                                            M291.8,180.405c6.7-0.1,12.1-5.5,12.1-12.3v-65.7l153.6,126.7l-153.6,127.1v-65.7c0-3.2-1.3-6.4-3.6-8.7c-2.3-2.3-5.4-3.6-8.7-3.6
+                                            c-71.3,0-184.7,0-260.6,86.6C50.1,289.405,115.8,182.105,291.8,180.405z" />
+                                        </g>
+                                    </svg>
+                                    <span>Exports</span>
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <svg fill="currentColor" height="18" width="16" version="1.1" id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 490.009 490.009" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M253.354,342.609c4.3,2,9.4,1.4,13-1.6l193.2-160c2.8-2.3,4.4-5.8,4.4-9.4c0-3.7-1.6-7.1-4.5-9.4l-193.1-159.4
+                                           c-3.7-3-8.7-3.7-13-1.6c-4.3,2-7,6.3-7,11.1v83.7c-221.5,8-220.6,176-220.2,257.4v9.7c0,5.6,3.7,10.4,9.1,11.8
+                                           c1,0.3,2.1,0.4,3.1,0.4c4.3,0,8.4-2.3,10.7-6.2c65.4-115.2,119.2-120.8,197.3-121.1v83.5
+                                           C246.354,336.209,249.055,340.509,253.354,342.609z M50.855,319.909c1.1-35.5,5.8-77.8,25.2-113.6c30.8-57,90.5-85.2,182.6-86.1
+                                           c6.7-0.1,12.1-5.5,12.1-12.2v-69.8l161.7,133.4l-161.6,133.8v-69.7c0-3.2-1.3-6.4-3.6-8.7s-5.4-3.6-8.7-3.6
+                                           C172.855,223.509,113.755,228.609,50.855,319.909z" />
+                                                <path
+                                                    d="M461.555,477.809v-226c0-6.8-5.5-12.3-12.3-12.3s-12.3,5.5-12.3,12.3v213.7h-386.3v-41.6c0-6.8-5.5-12.3-12.3-12.3
+                                           s-12.3,5.5-12.3,12.3v53.8c0,6.8,5.5,12.3,12.3,12.3h410.9C456.055,490.009,461.555,484.509,461.555,477.809z" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span>Exports All</span>
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="currentColor"
+                                        class="bi bi-person" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                    </svg>
+                                    <span>Request DTY Support</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid after-search-filter">
+                <div id="admin-dashboard-new-state">
+
+                    <div class="row row-dashboard-table shadow-lg">
+                        <div class="container-fluid">
+                            <div class="row row-dashboard-table-detail m-3">
+                                <div
+                                    class="admin-dashboard-table-content d-flex align-items-center justify-content-between p-0">
+                                    <div class="admin-search-fillter d-flex align-items-center">
+                                        <div class="admin-table-search me-2">
+                                            <input type="text" placeholder="Search">
+                                            <button type="button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="admin-table-filter">
+                                            <div class="dropdown d-flex align-items-center">
+                                                <button
+                                                    class="btn btn-secondary dropdown-toggle d-flex align-items-center"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Dropdown button
+                                                </button>
+                                                <button type="button" class="dropdown-button-search">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="admin-patients-info d-flex align-items-center">
+                                        <div class="admin-table-all-button">
+                                            <button type="button">All</button>
+                                        </div>
+                                        <div class="admin-table-request-info d-flex align-items-center">
+                                            <div class="request-info-icon request-info-icon-patient"></div>
+                                            <span>Patient</span>
+                                        </div>
+                                        <div class="admin-table-request-info d-flex align-items-center">
+                                            <div class="request-info-icon request-info-icon-family"></div>
+                                            <span>Family/Friend</span>
+                                        </div>
+                                        <div class="admin-table-request-info d-flex align-items-center">
+                                            <div class="request-info-icon request-info-icon-business"></div>
+                                            <span>Business</span>
+                                        </div>
+                                        <div class="admin-table-request-info d-flex align-items-center">
+                                            <div class="request-info-icon request-info-icon-concierge"></div>
+                                            <span>Concierge</span>
+                                        </div>
+                                        <div class="admin-table-request-info d-flex align-items-center">
+                                            <div class="request-info-icon request-info-icon-vip"></div>
+                                            <span>VIP</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row row-dashboard-actual-table">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div>Name</div>
+                                                </th>
+                                                <th scope="col"></th>
+                                                <th scope="col">Date Of Birth</th>
+                                                <th scope="col">Requestor</th>
+                                                <th scope="col">Requested Date</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Notes</th>
+                                                <th scope="col">Chat With</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="admin-patient-field">
+                                                <td scope="row">test,test</td>
+                                                <td>
+                                                    <button type="button" class="dashboard-table-button">
+                                                        <img src="images/envelop.svg" alt="" srcset="">
+                                                    </button>
+                                                </td>
+                                                <td>June 16,2023 (0)</td>
+                                                <td>Patient test,test</td>
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <div>Nov 20,2023 335h</div>
+                                                        <div>1m 01m</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex flex-column">
+                                                        <button type="button" class="dashboard-table-button">
+                                                            <img src="images/telephone.svg" alt="" srcset="">
+                                                            <span>
+                                                                +1(202) 456-1237
+                                                            </span>
+                                                        </button>
+                                                        <span>
+                                                            (Patient)
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td>Room Location : 101</td>
+                                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+                                                    voluptates est facere optio temporibus rerum, quia, dolor
+                                                    repudiandae hic exercitationem incidunt laboriosam voluptas.
+                                                    Maiores, culpa vitae nisi suscipit ab consectetur voluptatem aliquid
+                                                    ad aut fuga accusantium sit labore adipisci neque, nihil id impedit,
+                                                    iusto iste voluptate facilis iure voluptates sint?</td>
+                                                <td>
+                                                    <button type="button" class="dashboard-table-button">
+                                                        <img src="images/provider.svg" alt="" srcset="">
+                                                        <span>
+                                                            Provider
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <div class="admin-table-action-button">
+
+                                                        <button type="button"
+                                                            class="btn dashboard-table-button dropdown-toggle"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Actions
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end">
+                                                            <li><button class="dropdown-item"
+                                                                    type="button">Action</button></li>
+                                                            <li><button class="dropdown-item" type="button">Another
+                                                                    action</button></li>
+                                                            <li><button class="dropdown-item" type="button">Something
+                                                                    else here</button></li>
+                                                        </ul>
+
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row row-dashboard-mobile-main">
+                                <div class="admin-new-state-detail-patient">
+                                    <div class="container-fluid admin-new-state-detail">
+                                        <div class="admin-dashboard-mobile-open admin-new-state-patient-detail-padding" >
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-detail-icon mb-3">
+                                                <span>Patel,Sahil</span>
+                                                <div class="admin-new-state-icon">
+                                                    <span>Patient</span>
+                                                    <div class="request-info-icon request-info-icon-patient"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-address-button mb-2">
+                                                <div class="admin-new-state-address">
+                                                    Maryland Maryland, Maryland 2121
+                                                </div>
+                                                <div class="admin-new-state-button">
+                                                    <button type="button">Map Location</button>
+                                                </div>
+                                            </div>
+                                            <div class="admin-new-state-patient-detail-waiting mb-2">
+                                                <img src="images/clock_mobile_waiting.svg" alt="">
+                                                <span>Wait Time: </span>
+                                                <span class="admin-new-state-patient-detail-waiting-bold">
+                                                    DEC 5,2023 08:52 AM (641:48)
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <button type="button" class="admin-dashboard-mobile-close-button admin-new-state-view-close-button">View
+                                            Close</button>
+                                    </div>
+
+                                    <div class="admin-dashboard-mobile-open-panel container-fluid admin-new-state-detail-patient-mobile-padding" id="admin-new-state-mobile-view-open">
+                                        <div class="admin-new-state-patient-detail-mobile-view-component">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/calender_mobile_admin_dashbord.svg" alt=""></span>
+                                            <span>Date Of birth: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Jun 28,1991 (33)
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/email_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Email: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                sahil.patel@gmail.com
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/telephone_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Patient: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                +1 (202) 222-2222
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/person_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Requestor: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Patient patel, sahil
+                                            </span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="container-fluid admin-new-state-patient-detail-mobile-view-button">
+                                                <div class="row">
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-assign">Assign Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Cancel Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">View Notes</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Block Patient</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">Email</button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <hr class="m-0">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="admin-new-state-detail-patient">
+                                    <div class="container-fluid admin-new-state-detail">
+                                        <div class="admin-dashboard-mobile-open admin-new-state-patient-detail-padding" >
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-detail-icon mb-3">
+                                                <span>Patel,Sahil</span>
+                                                <div class="admin-new-state-icon">
+                                                    <span>Patient</span>
+                                                    <div class="request-info-icon request-info-icon-patient"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-address-button mb-2">
+                                                <div class="admin-new-state-address">
+                                                    Maryland Maryland, Maryland 2121
+                                                </div>
+                                                <div class="admin-new-state-button">
+                                                    <button type="button">Map Location</button>
+                                                </div>
+                                            </div>
+                                            <div class="admin-new-state-patient-detail-waiting mb-2">
+                                                <img src="images/clock_mobile_waiting.svg" alt="">
+                                                <span>Wait Time: </span>
+                                                <span class="admin-new-state-patient-detail-waiting-bold">
+                                                    DEC 5,2023 08:52 AM (641:48)
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <button type="button" class="admin-dashboard-mobile-close-button admin-new-state-view-close-button">View
+                                            Close</button>
+                                    </div>
+
+                                    <div class="admin-dashboard-mobile-open-panel container-fluid admin-new-state-detail-patient-mobile-padding" id="admin-new-state-mobile-view-open">
+                                        <div class="admin-new-state-patient-detail-mobile-view-component">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/calender_mobile_admin_dashbord.svg" alt=""></span>
+                                            <span>Date Of birth: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Jun 28,1991 (33)
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/email_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Email: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                sahil.patel@gmail.com
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/telephone_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Patient: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                +1 (202) 222-2222
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/person_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Requestor: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Patient patel, sahil
+                                            </span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="container-fluid admin-new-state-patient-detail-mobile-view-button">
+                                                <div class="row">
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-assign">Assign Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Cancel Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">View Notes</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Block Patient</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">Email</button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <hr class="m-0">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="admin-new-state-detail-patient">
+                                    <div class="container-fluid admin-new-state-detail">
+                                        <div class="admin-dashboard-mobile-open admin-new-state-patient-detail-padding" >
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-detail-icon mb-3">
+                                                <span>Patel,Sahil</span>
+                                                <div class="admin-new-state-icon">
+                                                    <span>Patient</span>
+                                                    <div class="request-info-icon request-info-icon-patient"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="admin-new-state-patient-detail admin-new-state-patient-address-button mb-2">
+                                                <div class="admin-new-state-address">
+                                                    Maryland Maryland, Maryland 2121
+                                                </div>
+                                                <div class="admin-new-state-button">
+                                                    <button type="button">Map Location</button>
+                                                </div>
+                                            </div>
+                                            <div class="admin-new-state-patient-detail-waiting mb-2">
+                                                <img src="images/clock_mobile_waiting.svg" alt="">
+                                                <span>Wait Time: </span>
+                                                <span class="admin-new-state-patient-detail-waiting-bold">
+                                                    DEC 5,2023 08:52 AM (641:48)
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <button type="button" class="admin-dashboard-mobile-close-button admin-new-state-view-close-button">View
+                                            Close</button>
+                                    </div>
+
+                                    <div class="admin-dashboard-mobile-open-panel container-fluid admin-new-state-detail-patient-mobile-padding" id="admin-new-state-mobile-view-open">
+                                        <div class="admin-new-state-patient-detail-mobile-view-component">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/calender_mobile_admin_dashbord.svg" alt=""></span>
+                                            <span>Date Of birth: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Jun 28,1991 (33)
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/email_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Email: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                sahil.patel@gmail.com
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/telephone_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Patient: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                +1 (202) 222-2222
+                                            </span>
+                                        </div>
+                                        <div class="admin-new-state-patient-detail-mobile-view-component ">
+                                            <span class="admin-new-state-patient-detail-mobile-view-img"><img src="images/person_mobile_admin_dashboard.svg" alt=""></span>
+                                            <span>Requestor: </span>
+                                            <span class="admin-new-state-patient-detail-mobile-view-bold">
+                                                Patient patel, sahil
+                                            </span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="container-fluid admin-new-state-patient-detail-mobile-view-button">
+                                                <div class="row">
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-assign">Assign Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Cancel Case</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">View Notes</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-cancel-block">Block Patient</button>
+                                                    </div>
+                                                    <div class="col-6 mb-2">
+                                                        <button type="button" class="admin-new-state-patient-detail-mobile-view-button-view-email">Email</button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <hr class="m-0">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
